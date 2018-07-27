@@ -35,7 +35,7 @@
                 <a class="navbar-brand" v-bind:title="brand">{{ brand }}</a>
                 <form class="form-inline">
                     <button class="btn btn-sm btn-success my-2 my-sm-0" type="submit">Connexion</button>
-                    <button class="btn btn-sm btn-danger my-2 my-sm-0" type="submit">Déconnexion</button>
+                    <button class="btn btn-sm btn-danger my-2 my-sm-0" type="submit" v-if="connected">Déconnexion</button>
                 </form>
             </nav>
         </div>
