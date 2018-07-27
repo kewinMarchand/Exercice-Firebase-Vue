@@ -14,6 +14,6 @@ firebase.initializeApp(config);
 new Vue({
     el: '#app',
     data: {
-
+        brand: 'Todolist Vue.js'
     }
 })
