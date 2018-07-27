@@ -31,16 +31,53 @@
     <body>
         
         <div id="app">
-            <nav class="navbar navbar-light bg-light">
-                <a class="navbar-brand" v-bind:title="brand">{{ brand }}</a>
+            <nav class="navbar navbar-light bg-dark">
+                <a class="navbar-brand text-white" v-bind:title="brand">{{ brand }}</a>
                 <form class="form-inline">
-                    <button class="btn btn-sm btn-success my-2 my-sm-0" type="submit">Connexion</button>
-                    <button class="btn btn-sm btn-danger my-2 my-sm-0" type="submit" v-if="connected">Déconnexion</button>
+                    <button class="btn btn-sm btn-success my-2 my-sm-0" type="button" data-toggle="modal" data-target="#connectionModal" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle connexion modal">Connexion</button>
+                    <button class="btn btn-sm btn-danger my-2 my-sm-0" type="button" v-if="connected">Déconnexion</button>
                 </form>
             </nav>
-        </div>
-        
 
+            <!-- Modal -->
+            <div class="modal fade" id="connectionModal" tabindex="-1" role="dialog" aria-labelledby="connectionModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="connectionModalCenterTitle">Connexion</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form >
+                                <div class="form-group">
+                                    <label id="labelEmail" for="inputEmail">Votre email</label>
+                                    <input type="email" class="form-control" id="email" v-model="email" aria-describedby="labelEmail" placeholder="Entrez votre email" autocompletion="email">
+                                    
+                                </div>
+                                <div class="form-group">
+                                    <label id="labelPassword"for="inputPassword">Votre mot de passe</label>
+                                    <input type="password" class="form-control" id="password" v-model="password" aria-describedby="labelPassword" placeholder="Entrez votre password">
+                                    <small id="connectionHelp" class="form-text text-muted">Nous ne partageons vos données avec personne</small>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="btn-group m-auto" role="group" aria-label="Groupe de boutons connexion">
+                                <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Fermer</button>
+                                <button type="button" class="btn btn-sm btn-outline-primary">Je m'inscris</button>
+                                <button type="button" class="btn btn-sm btn-outline-success">Je me connecte</button>
+                                <button type="button" class="btn btn-sm btn-outline-danger">Google Id</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+        
+        </div>
         <!-- Bootstrap.js -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

@@ -16,5 +16,7 @@ new Vue({
     data: {
         brand: 'Todolist Vue.js',
         connected: false,
+        email: 'Entrez votre email',
+        password: ''
     }
 })
